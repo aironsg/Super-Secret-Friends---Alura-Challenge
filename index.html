@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Amigo Secreto</title>
+</head>
+
+<body>
+    <main class="main-content">
+        <header class="header-banner">
+            <h1 class="main-title">Super Amigo Secreto</h1>
+            <img src="assets/amigo-secreto.png" alt="Imagem representativa de amigo secreto">
+        </header>
+        
+        <section class="input-section">
+            <!-- Campo para o nome do autor -->
+            <div id="authorSection">
+                <h2 class="section-title">Digite o nome do autor da brincadeira</h2>
+                <div class="input-wrapper">
+                    <input type="text" id="author" class="input-name" placeholder="Digite o nome do autor">
+                    <button class="button-add" onclick="setAuthor()">Confirmar</button>
+                </div>
+            </div>
+
+            <!-- Campo para adicionar amigos (inicialmente oculto) -->
+            <div id="addFriendsSection" class="hidden">
+                <h2 class="section-title">Digite o nome dos seus amigos</h2>
+                <div class="input-wrapper">
+                    <input type="text" id="friend" class="input-name" placeholder="Digite um nome">
+                    <button class="button-add" onclick="addFriend()">Adicionar</button>
+                </div>
+            </div>
+
+            <!-- Lista de amigos adicionados -->
+            <ul id="friendList" class="name-list hidden" aria-labelledby="friendList" role="list"></ul>
+
+            <!-- Resultado do sorteio (inicialmente oculto) -->
+            <ul id="result" class="result-list hidden" aria-live="polite"></ul>
+
+            <!-- Campo para buscar amigo secreto (inicialmente oculto) -->
+            <div id="searchFriendSection" class="hidden">
+                <h2 class="section-title">Buscar amigo secreto</h2>
+                <div class="input-wrapper">
+                    <input type="text" id="searchFriend" class="input-name" placeholder="Digite o nome do participante">
+                    <button class="button-add" onclick="revealSecretSanta()">Buscar</button>
+                </div>
+            </div>
+
+            <!-- Botão de sortear (inicialmente oculto) -->
+            <div class="button-container hidden" id="drawButtonContainer">
+                <button class="button-draw" onclick="secretSantaDraw()" aria-label="Sortear amigo secreto">
+                    <img src="assets/play_circle_outline.png" alt="Ícone para sortear">
+                    Sortear amigo
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
